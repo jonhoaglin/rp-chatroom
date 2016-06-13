@@ -1,0 +1,29 @@
+<span><%= link_to "All Rooms", root_url %> &gt; <%= link_to @room.group.universe.name, @room.group.universe %> &gt; <%= link_to @room.group.name, [@room.group.universe, @room.group] %></span>
+<% if isPrivateRoom?(@room) %>
+    <%= render 'private' %>
+<% else %>
+  <div id="room" data-id="<%= @room.id %>">
+    <section id="messages">
+      <%= render @messages %>
+    </section>
+    <aside id="participants">
+      <% if isAdminMember?(@room.group) %>
+          <%= link_to "Edit Room", edit_room_path %>
+          <% @requests.each do |r| %>
+              <span><%= render r %><%= link_to "Approve", edit_room_participant_path(@room, r) %></span>
+          <% end %>
+      <% end %>
+      <% @participants.group_by(&:user).each do |user, parts| %>
+          <%= render user %><br />
+          <% parts.each do |part| %>
+            <%= render part %>
+          <% end %>
+      <% end %>
+      <%= render @room.tags %>
+    </aside>
+    <section id="input">
+      <%= render 'messages/message_form_character' %>
+      <%= render 'messages/message_form_user' %>
+    </section>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+<%= form_for [@room, @participant] do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <aside class="char_select_contain"><%= f.select :character_id, @characters.map {|o| [ o.avatar.present? ? '' : o.name, o.id, title: o.avatar.present? ? o.avatar.url(:icon) : '' ]}, {}, class:'char_select' %></aside>
+    <% if @room.approval_only? %>
+      <p>This room is approval only, please wait for a room admin to approve your character for use.</p>
+    <% end %>
+    <%= f.submit "Add" %>
+<% end %>

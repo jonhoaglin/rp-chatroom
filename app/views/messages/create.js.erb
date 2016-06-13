@@ -1,0 +1,4 @@
+$('#<%= @clear %> .message_content').val('');
+console.log('<%= @speaker %>')
+$('#messages').append("<%= escape_javascript(raw render(@messages))%>");
+scrollBottom();

@@ -1,0 +1,13 @@
+<% provide(:title, 'New Universe') %>
+<div id="frontgate">
+  <h1>New Universe</h1>
+  <div>
+    <%= form_for(@universe) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.text_field :name, placeholder: 'Universe Name' %>
+
+        <%= f.submit "Create Universe" %>
+    <% end %>
+  </div>
+</div>

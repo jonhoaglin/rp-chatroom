@@ -1,0 +1,13 @@
+<header>
+  <div id="logo">
+    <%= link_to image_tag("logo.png", alt:"logo"), '/' %>
+  </div>
+  <nav>
+      <% if logged_in? %>
+          <%= link_to "My Characters", user_characters_path(current_user) %>
+          <%= link_to "Profile", current_user %>
+          <%= link_to "Settings", edit_user_path(current_user) %>
+          <%= link_to "Log out", logout_path, method: "delete" %>
+      <% end %>
+  </nav>
+</header>

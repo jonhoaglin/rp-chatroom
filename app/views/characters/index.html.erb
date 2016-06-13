@@ -1,0 +1,8 @@
+<% provide(:title, 'My Characters') %>
+<h1>My Characters</h1>
+<%= link_to "New Character", new_user_character_path %>
+<%= will_paginate %>
+
+<ul class="characters">
+  <%= render @characters %>
+</ul>

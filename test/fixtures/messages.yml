@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText
+  room_id: 
+  speaker_id: 
+  speaker_type: Speaker
+
+two:
+  content: MyText
+  room_id: 
+  speaker_id: 
+  speaker_type: Speaker

@@ -1,0 +1,12 @@
+<% provide(:title, @character.name) %>
+<div class="row">
+    <section class="user_info">
+      <h1>
+        <%= @character.name %>
+      </h1>
+      <%= image_tag(@character.avatar.url(:full)) %>
+      <% if @character.user == current_user %>
+        <%= link_to "Edit", edit_user_character_path %>
+      <% end %>
+    </section>
+</div>

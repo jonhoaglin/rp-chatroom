@@ -1,0 +1,17 @@
+<% unless message.content.blank? %>
+    <div class="message" data-time="<%= message.created_at.to_i %>">
+      <% if message.speaker_id.present? %>
+          <% if message.speaker_type == 'User' %>
+              <div class="user_message">
+                <%= render User.find(message.speaker_id) %>
+                <%= render html: message.content.bbcode_to_html.html_safe %>
+              </div>
+          <% else %>
+              <div class="character_message">
+                <%= render Character.find(message.speaker_id) %>
+                <%= render html: message.content.bbcode_to_html.html_safe %>
+              </div>
+          <% end %>
+      <% end %>
+    </div>
+<% end %>

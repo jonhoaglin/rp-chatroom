@@ -1,0 +1,7 @@
+<div class="speaker_display">
+  <% if character.avatar.present? %>
+    <%= link_to image_tag(character.avatar.url(:icon)), [character.user, character] %>
+  <% else %>
+    <%= link_to character.name, [character.user, character] %>
+  <% end %>
+</div>

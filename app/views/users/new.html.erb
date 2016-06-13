@@ -1,0 +1,19 @@
+<% provide(:title, 'Sign up') %>
+<div id="frontgate">
+  <h1>Sign up</h1>
+  <div>
+    <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.text_field :name, placeholder: 'Username' %>
+
+        <%= f.email_field :email, placeholder: 'Email Address' %>
+
+        <%= f.password_field :password, placeholder: 'Password' %>
+
+        <%= f.password_field :password_confirmation, placeholder: 'Password Again' %>
+
+        <%= f.submit "Create Account" %>
+    <% end %>
+  </div>
+</div>

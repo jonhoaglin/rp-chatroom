@@ -1,0 +1,13 @@
+<% provide(:title, 'Create New Character') %>
+<div id="character_form">
+  <h1>New Character</h1>
+  <div>
+    <%= form_for [@character.user, @character] do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.text_field :name, placeholder: 'Character Name' %>
+
+        <%= f.submit "Create Character" %>
+    <% end %>
+  </div>
+</div>

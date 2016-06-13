@@ -1,0 +1,16 @@
+<% provide(:title, 'Edit Group') %>
+<div id="frontgate">
+  <h1>Edit Group for <%= @universe.name %></h1>
+  <div>
+    <%= form_for [@universe, @group] do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.text_field :name, placeholder: 'Group Name' %>
+
+        <%= f.check_box :private %><%= f.label :private %>
+        <%= f.check_box :hidden %><%= f.label :hidden %>
+
+        <%= f.submit "Edit Group" %>
+    <% end %>
+  </div>
+</div>

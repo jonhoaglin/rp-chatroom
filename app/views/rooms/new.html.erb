@@ -1,0 +1,19 @@
+<% provide(:title, 'New Room') %>
+<div id="frontgate">
+  <h1>New Room for <%= @group.name %></h1>
+  <div>
+    <%= form_for [@universe, @group, @room] do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.text_field :name, placeholder: 'Room Name' %>
+
+        <%= f.text_field :tag_list %>
+
+        <%= f.check_box :private %><%= f.label :private %>
+        <%= f.check_box :closed_canon %><%= f.label :closed_canon %>
+        <%= f.check_box :approval_only %><%= f.label :approval_only %>
+
+        <%= f.submit "Create Room" %>
+    <% end %>
+  </div>
+</div>

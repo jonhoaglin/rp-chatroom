@@ -1,0 +1,6 @@
+<%= form_for [@room, @message], remote: true, html: {id:"new_message_ooc"} do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+    <%= f.hidden_field :speaker_type, :value => 'User' %>
+    <aside class="OOC_contain"><%= render current_user %></aside>
+    <%= f.text_area :content, class:'message_content' %>
+<% end %>

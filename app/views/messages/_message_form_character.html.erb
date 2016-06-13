@@ -1,0 +1,7 @@
+<%= form_for [@room, @message], remote: true, html: {id:"new_message_char"} do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+    <%= f.hidden_field :speaker_type, :value => 'Character' %>
+    <aside class="char_select_contain"><%= f.select :speaker_id, @participants.where(user_id: current_user).map {|o| [ o.avatar.present? ? '' : o.name, o.id, title: o.avatar.present? ? o.avatar.url(:icon) : '' ]}, {}, class:'char_select' %>
+      <span><%= link_to 'Add', new_room_participant_path(@room) %></span></aside>
+    <%= f.text_area :content, class:'message_content', disabled: @participants.any? ? false : true %>
+<% end %>

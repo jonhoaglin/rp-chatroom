@@ -1,0 +1,23 @@
+<% provide(:title, "Edit user") %>
+<div id="frontgate">
+  <h1>Update your profile</h1>
+  <div>
+    <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.text_field :name, placeholder: 'Username' %>
+
+        <%= f.email_field :email, placeholder: 'Email Address' %>
+
+        <%= f.password_field :password, autocomplete: :off, value: '', placeholder: 'New Password' %>
+
+        <%= f.password_field :password_confirmation, autocomplete: :off, placeholder: 'New Password Confirmation' %>
+
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar %>
+        <%= image_tag(@user.avatar.url(:thumb)) %>
+
+        <%= f.submit "Save changes" %>
+    <% end %>
+  </div>
+</div>

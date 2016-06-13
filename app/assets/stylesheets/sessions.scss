@@ -1,0 +1,66 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$button-color: cornflowerblue;
+$button-text-color: black;
+
+#frontgate {
+  min-width: 50%;
+  width: 30vw;
+  margin: auto;
+}
+
+#frontgate h1 {
+  width: 100%;
+}
+
+#frontgate>div {
+  width: 80%;
+  margin: auto;
+}
+
+#frontgate>div input[type="text"], #frontgate>div input[type="password"], #frontgate>div input[type="email"] {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  border: 1px solid black;
+  height: 55px;
+  max-height: 20vh;
+  text-align: center;
+}
+
+#frontgate>div span {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#frontgate>div input[type="submit"] {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  border: 1px solid black;
+  background: $button-color;
+  height: 55px;
+  max-height: 20vh;
+  text-align: center;
+  color: $button-text-color;
+}
+
+#frontgate>div>a {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  border: 1px solid black;
+  background: $button-color;
+  line-height: 55px;
+  height: 55px;
+  max-height: 20vh;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  color: $button-text-color;
+}

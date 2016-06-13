@@ -1,0 +1,4 @@
+<%= form_for [@room, @participant] do |f| %>
+  <%= f.check_box :approved %><%= f.label :approved %>
+  <%= f.submit "update" %>
+<% end %>

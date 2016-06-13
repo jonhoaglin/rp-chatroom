@@ -1,0 +1,7 @@
+<ul class="universes">
+  <% if current_user.admin? %>
+      <%= link_to "New Universe", new_universe_path %>
+  <% end %>
+  <%= render 'shared/searchbox' %>
+  <%= render @universes %>
+</ul>

@@ -1,0 +1,7 @@
+<% if group.name.present? %>
+    <% if isApprovedMember?(group) or (!group.hidden? and !group.private?) %>
+      <li><%= link_to group.name, [group.universe, group] %></li>
+    <% elsif !group.hidden? and group.private? %>
+      <li><%= group.name %>(Private)</li>
+    <% end %>
+<% end %>
